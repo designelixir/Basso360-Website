@@ -1,5 +1,9 @@
-<nav class="site-navigation" style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; border: 2px solid red;">
+
+<nav class="site-navigation">
+<img src="{website.logoImageUrl}" class="logo" alt="Basso360 Logo">
+<div class="site-navigation-list-container">
   <ul class="site-navigation-list">
+  
     {.repeated section items}
 
       <li class="site-navigation-item {.section active} active-link{.end}">
@@ -19,5 +23,9 @@
       </li>
 
     {.end}
+    <squarespace:block-field id="socialBlocks" columns="1" />
   </ul>
+  </div>
 </nav>
+
+
