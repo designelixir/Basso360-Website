@@ -1,0 +1,33 @@
+
+<div style="border-bottom: 2px solid orange; margin: 50px 0px; width: 160px; ">
+<h2 class="title">Our Team</h2>
+</div>
+
+<!-- item loop -->
+{.repeated section items}
+
+    <div class="team-card flex-start-start">
+        <div class="team-card-wrapper flex-start-start basic-margin">
+            <div class="team-card-image-container">
+                <div class="team-card-image" style="background-image: url('{assetUrl}');"></div>
+                <br>
+                <h3 class="team-title">{title}</h3>
+                <p class="team-job-title">{categories}</p>
+                <br>
+                {.if sourceUrl}
+                    <a href="mailto:{sourceUrl}" target="_blank"><img src="assets/email.png" class="icon hover"></a>
+                {.end}
+            </div>
+            <div class="team-card-description">
+                <p class="team-excerpt">{excerpt}</p>
+                <p>{body}</p>
+            </div>
+        </div>
+    </div>
+
+{.or}
+
+  <!-- no items means no blog posts -->
+  <p><em>No team members yet.</em></p>
+
+{.end}
