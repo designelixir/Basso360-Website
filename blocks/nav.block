@@ -1,3 +1,8 @@
+
+<div class="socials-floating-block">
+      {@|apply socials.block}
+    </div>
+
 <div class="site-navigation-logo-container flex-center-spacebetween">
     <img src="{website.logoImageUrl}" onclick="window.open('/', '_self')" class="logo hover" alt="Basso360 Logo">
     <div class="hamburger hover" onclick="openHamburger()">
