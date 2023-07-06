@@ -10,18 +10,32 @@
 
     <div class="site-container">
 
-    <div class="site-navigation-floater">
-     <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-     </div>
+    
+
+    {@|apply nav.block}
+    <div class="socials-floating-block">
+    {@|apply socials.block}
+    </div>
+     
+    
+
+     <section>
+        <div class="hero-video-container" style="width: 100vw; height: 900px; background-color: blue;">
+
+        </div>
+        
+        <div class="flex-center-center bounce-arrow-container hover">
+            <img class="bounce-top bounce-arrow" src="assets/arrow.png">
+        </div>
+        
+     </section>
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
        {squarespace.main-content}
       </main>
 
       <!--Footer with open block field -->
-      <footer class="site-footer">
-        <squarespace:block-field id="footerBlocks" columns="12" />
-      </footer>
+      {@|apply footer.block}
 
     </div>
 

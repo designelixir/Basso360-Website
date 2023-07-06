@@ -1,6 +1,6 @@
 
-<nav class="site-navigation">
-<img src="{website.logoImageUrl}" class="logo" alt="Basso360 Logo">
+<nav class="site-navigation" id="site-navigation-nav">
+
 <div class="site-navigation-list-container">
   <ul class="site-navigation-list">
   
@@ -23,9 +23,44 @@
       </li>
 
     {.end}
-    <squarespace:block-field id="socialBlocks" columns="1" />
+    <li><squarespace:block-field id="socialBlocks" columns="1" /></li>
   </ul>
   </div>
 </nav>
 
+
+<script>
+var mobileMenu = document.getElementById('site-navigation-nav');
+var slice1 = document.getElementById('slice1');
+var slice2 = document.getElementById('slice2')
+var slice3 = document.getElementById('slice3')
+function openHamburger(){
+  if (mobileMenu.style.display === "block"){
+    mobileMenu.style.display = "none";
+    slice1.style.transform = "rotate(0deg)"
+    slice2.style.transform = "rotate(0deg) translate(0px, 0px)"
+    slice3.style.display = "block"
+  } else {
+    mobileMenu.style.display = "block"
+    slice1.style.transform = "rotate(45deg)"
+    slice2.style.transform = "rotate(-45deg) translate(10px, -10px)"
+    slice3.style.display = "none"
+  }
+}
+
+window.addEventListener('resize', function() {
+  
+  if (window.innerWidth < 680) {
+    mobileMenu.style.display = "none";
+    slice1.style.transform = "rotate(0deg)"
+    slice2.style.transform = "rotate(0deg) translate(0px, 0px)"
+    slice3.style.display = "block"
+  } else {
+    mobileMenu.style.display = "block";
+  }
+  
+});
+
+
+</script>
 
