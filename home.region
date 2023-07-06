@@ -29,6 +29,10 @@
         </div>
         
      </section>
+     <section style="border: 1px solid red;" class="flex-center-center basic-padding">
+        <img src="assets/360-circle.svg">
+        <squarespace:block-field id="homepageIntro" columns="1" />
+     </section>
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
        {squarespace.main-content}
