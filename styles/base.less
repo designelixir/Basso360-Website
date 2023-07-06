@@ -4,15 +4,25 @@
   --gray-blue: #39444C; 
   --off-white: #F3F3F3;
   --primary: #626F74;
+  --navy: #071950;
 }
 body {background: var(--off-white)}
 
-h2 {font-size: 36px;}
+h2 {font-size: 36px; line-height: 36px;}
+.title {font-family: 'nitti', monospace; font-weight: 200; text-transform: uppercase; font-size: 24px;  }
+
+p {font-family: "synthese", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  font-style: normal;}
 
 .white-text {color: white!important;}
 .basic-padding {padding: 40px;}
+.basic-margin {margin: 20px;}
 
 .hover:hover {transform: scale(1.01); cursor: pointer;}
+
+.icon {height: 25px;}
 
 button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: none; letter-spacing: 1px; font-size: 18px; font-family: 'Nitti', sans-serif;}
 .light-outline-button {color: var(--off-white); border: 2px solid var(--off-white); background-color: unset;}
@@ -25,6 +35,7 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
 .flex-center-center {display: flex; align-items: center; justify-content: center;}
 .flex-center-spacebetween {display: flex; align-items: center; justify-content: space-between;}
 .flex-start-center {display: flex; align-items: flex-start; justify-content: center;}
+.flex-start-start {display: flex; align-items: flex-start; justify-content: flex-start;}
 .flex-wrap {flex-wrap: wrap;}
 .flex-column {flex-direction: column;}
 
@@ -33,6 +44,7 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
 .site-navigation-item {list-style-type: none; margin: 20px 0px;}
 .site-navigation-item a {font-family: 'Nitti', sans-serif; text-decoration: none; font-size: 24px; margin: 25px 0px; text-transform: uppercase; color: black;}
 .site-navigation-item a:hover {text-decoration: underline; font-weight: 500;}
+.active-link a{text-decoration: underline;}
 
 .logo {max-height: 60px; margin: 40px}
 
@@ -43,7 +55,7 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
 #slice3 {display: block;}
 #mobile-social-icons {display: none; margin-top: 15px;}
 @media screen and (max-width: 1070px) {
-  .logo {max-height: 75px;}
+  .logo {max-height: 50px; margin: 0px 40px;}
   
   .hamburger {display: block;}
   #site-navigation-nav {display: none;}
@@ -52,26 +64,43 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
   .site-navigation-item a {color: white; font-size: 32px; }
   .site-navigation-item {margin: 50px 0px; text-align: center;}
   .socials-floating-block {display: none;}
+  .site-navigation-logo-container {background-color: var(--off-white)}
   
 }
 
-.socials-floating-block { max-width: 100px; z-index: 200; position: fixed; top: 50vh; right: 40px;}
+.socials-floating-block { max-width: 100px; z-index: 200; position: fixed; top: 50vh; right: 1%;}
 
 .bounce-arrow-container {margin-top: -250px; height: 150px;}
 .bounce-arrow {height: 40px;}
 
 // Main Content 
-.content-container {margin: 50px 20% 50px; width: 60%;}
-.page-header { width: 100%; margin-top: 40px; }
-.header-image {background-size: cover;  height: 400px; width: 100%; background-repeat: no-repeat;}
-.page-title {background-color: var(--gray-blue); color: white; margin: 0px 20% 0px; width: 60%; text-align: center;border-top: 15px solid var(--primary); border-bottom: 15px solid var(--primary)}
+.content-container {margin: 50px 10% 50px 22%; width: 70%;}
+.page-header { width: 100%;  }
+.header-image {background-size: cover;  height: 400px; width: 100%; background-repeat: no-repeat; background-position: center center;}
+.page-title {background-color: var(--gray-blue); color: white; width: 100%; text-align: center;border-top: 15px solid var(--primary); border-bottom: 15px solid var(--primary)}
 
 @media screen and (max-width: 1070px) {
-  .content-container {margin: 20px; width: 100%;}
+  .content-container {margin: 20px; width: unset;}
   .page-header {margin-top: 140px;}
   .page-title {width: 100%; margin: 0;}
+  .header-image {height: 200px;}
 }
 
+// About Page
+.team-card {background-color: white; margin: 0px 0px 50px;}
+.team-card-image-container {margin-right: 30px; min-width: 300px; max-width: 350px; text-align: center;}
+.team-card-description {border-left: 1px solid black; padding-left: 25px;}
+.team-card-image {width: 100%; height: 400px; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.team-title {font-size: 32px; margin: 0px; color: var(--navy)}
+.team-job-title {font-size: 18px; color: var(--navy); opacity: 0.75; margin: 0px;}
+
+@media screen and (max-width: 800px) {
+  .team-card-wrapper {flex-wrap: wrap;}
+  .team-card-image-container {width: 100%; max-width: 100%; margin-right: 0;}
+  .team-card-description {border-top: 1px solid black; border-left: none; margin-top: 25px;}
+  
+  .team-card-image {height: 600px;}
+}
 
 // Footer 
 footer {z-index: 300;}

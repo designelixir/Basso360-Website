@@ -1,6 +1,6 @@
 <div class="interested-block basic-padding">
 <h2 class="white-text">Interested in working with us?</h2>
-<button>Let's get started</button>
+<button onclick="window.open('contact', '_self')">Let's get started</button>
 
 </div>
 

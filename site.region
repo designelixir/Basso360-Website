@@ -12,7 +12,9 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} ">
     {@|apply nav.block}
     
-    <div class="page-content">
+    
+      
+      <main class="content-container" role="main" data-content-field="main-content">
       <div class="page-header flex-center-center">
         
         <div class="page-title">
@@ -28,7 +30,6 @@
         </div>
         
       </div>
-      <main class="content-container" role="main" data-content-field="main-content">
           {squarespace.main-content}
         </main>
     
@@ -39,7 +40,7 @@
       
 
       <!--Footer with open block field -->
-      </div>
+      
       {@|apply footer.block}
 
     
