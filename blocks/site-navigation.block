@@ -23,7 +23,7 @@
       </li>
 
     {.end}
-    <li><squarespace:block-field id="socialBlocks" columns="1" /></li>
+    <li id="mobile-social-icons"><squarespace:block-field id="socialBlocks" columns="1" /></li>
   </ul>
   </div>
 </nav>
@@ -34,17 +34,20 @@ var mobileMenu = document.getElementById('site-navigation-nav');
 var slice1 = document.getElementById('slice1');
 var slice2 = document.getElementById('slice2')
 var slice3 = document.getElementById('slice3')
+var mobileSocialIcons = document.getElementById('mobile-social-icons')
 function openHamburger(){
   if (mobileMenu.style.display === "block"){
     mobileMenu.style.display = "none";
     slice1.style.transform = "rotate(0deg)"
     slice2.style.transform = "rotate(0deg) translate(0px, 0px)"
     slice3.style.display = "block"
+    mobileSocialIcons.style.display = "none"
   } else {
     mobileMenu.style.display = "block"
     slice1.style.transform = "rotate(45deg)"
     slice2.style.transform = "rotate(-45deg) translate(10px, -10px)"
     slice3.style.display = "none"
+    mobileSocialIcons.style.display = "block"
   }
 }
 
