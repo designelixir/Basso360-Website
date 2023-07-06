@@ -29,9 +29,55 @@
         </div>
         
      </section>
-     <section style="border: 1px solid red;" class="flex-center-center basic-padding">
+     <section class="flex-start-center basic-padding">
         <img src="assets/360-circle.svg">
         <squarespace:block-field id="homepageIntro" columns="1" style="width: 100px; border: 1px solid lime"/>
+     </section>
+
+     <section class="scrolling-client-list">
+        <h2>Expertise in Multiple Categories</h2>
+        <br>
+        <squarespace:query collection="client-list" limit="15">
+            <div class="client-list-grid flex-center-start" id="scrolling-client-list">
+                {.repeated section items}
+                <div class="client hover flex-center-center flex-column">
+                    <img src="{assetUrl}" class="client-logo"/>
+                    <h6 class="client-title">{title}</h6>
+                </div>
+                {.end}
+
+            </div>
+
+
+        </squarespace:query>
+     </section>
+
+     <section class="flex-center-center basic-margin">
+        <div style="background: white" class="basic-padding">
+            <div style="border-bottom: 2px solid orange; margin: 50px 0px; width: 250px; ">
+                <h2 class="title">In The Press</h2>
+            </div>
+            <squarespace:query collection="press" limit="2">
+            <div class="flex-center-start">
+                {.repeated section items}
+                    <div onclick="window.open({sourceUrl}, '_blank')">
+                        <h4>{title}</h4>
+                        <script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
+                        <img src={assetLink}/>
+                    </div>
+                    
+                {.end}
+               
+
+
+            </div>
+
+
+        </squarespace:query>
+        <div class="flex-center-flexend basic-margin" >
+         <a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
+         </div>
+        </div>
      </section>
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
@@ -51,3 +97,31 @@
 
   </body>
 </html>
+
+<script>
+
+function moveFirstChildToLast() {
+  setInterval(function() {
+    var element = document.getElementById('scrolling-client-list')
+    const firstChild = element.firstElementChild;
+    firstChild.style.opacity = '0';
+    element.appendChild(firstChild);
+    firstChild.style.opacity = '1';
+  }, 2000);
+}
+
+moveFirstChildToLast();
+
+const clientListGrid = document.querySelector('.client');
+const images = Array.from(clientListGrid.querySelectorAll('.client-image'));
+const imageWidth = images[0].offsetWidth;
+
+clientListGrid.addEventListener('mouseover', function() {
+  clientListGrid.style.animationPlayState = 'paused';
+});
+
+clientListGrid.addEventListener('mouseout', function() {
+  clientListGrid.style.animationPlayState = 'running';
+});
+
+</script>

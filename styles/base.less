@@ -13,7 +13,7 @@ body {background: var(--off-white)}
 h2 {font-size: 36px; line-height: 36px;}
 h3 {font-size: 28px; line-height: 36px;}
 h4 {font-size: 24px; line-height: 28px;}
-
+h6 {font-size: 18px; color: gray; font-family: 'nitti', monospace; padding: 0;}
 time {font-size: 16px; font-family: 'nitti', monospace; text-transform: uppercase; padding: 25px 0px; color: gray;}
 
 .title {font-family: 'nitti', monospace; font-weight: 200; text-transform: uppercase; font-size: 24px;  }
@@ -26,7 +26,7 @@ p {font-family: "synthese", sans-serif;
 
 .white-text {color: white!important;}
 .basic-padding {padding: 40px;}
-.basic-margin {margin: 20px;}
+.basic-margin {margin: 40px;}
 
 .hover:hover {transform: scale(1.01); cursor: pointer;}
 
@@ -44,8 +44,12 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
 .flex-center-spacebetween {display: flex; align-items: center; justify-content: space-between;}
 .flex-start-center {display: flex; align-items: flex-start; justify-content: center;}
 .flex-start-start {display: flex; align-items: flex-start; justify-content: flex-start;}
+.flex-center-start {display: flex; align-items: center; justify-content: flex-start;}
+.flex-center-flexend {display: flex; align-items: center; justify-content: flex-end;}
+
 .flex-wrap {flex-wrap: wrap;}
 .flex-column {flex-direction: column;}
+
 
 .site-navigation-logo-container {position: fixed; top: 0; left: 0; width: 100vw; z-index: 3000000;}
 .site-navigation-list-container {position: fixed; top: 110px; left: 40px;}
@@ -83,8 +87,18 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
 
 
 // Homepage 
-#homepageIntro {border: 1px solid lime; margin-left: 25px; }
+#homepageIntro { margin-left: 25px; max-width: 800px; }
 
+.scrolling-client-list {width: 100vw; text-align: center; margin: 50px 0px;}
+.client {min-width: 250px; max-width: 300px; padding: 25px; animation: slideImages 2s linear infinite;}
+
+.client-list-grid { overflow-x: scroll; }
+.client-logo {width: 200px; -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);}
+  
+.client-logo:hover {filter: none; -webkit-filter: none;}
+.client-title {opacity: 0;}
+.client-logo:hover + .client-title {opacity: 1;}
 
 // Main Content 
 .content-container {margin: 50px 10% 50px 22%; width: 70%;}
@@ -221,3 +235,22 @@ footer {z-index: 300;}
     opacity: 1;
   }
 }
+
+@keyframes slideImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideImages {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
