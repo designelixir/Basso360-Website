@@ -18,10 +18,11 @@
         <div class="page-title">
           <h1>{collection.navigationTitle}</h1>
         </div>
-        <main class="content-container" role="main" data-content-field="main-content">
+        
+      </div>
+      <main class="content-container" role="main" data-content-field="main-content">
           {squarespace.main-content}
         </main>
-      </div>
     
 
     
