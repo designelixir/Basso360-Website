@@ -1,4 +1,6 @@
 <!-- item loop -->
+<div class="flex-center-center">
+<div class="content-child">
 {.repeated section items}
 
     <div class="press-card flex-start-start">
@@ -12,7 +14,7 @@
             <div class="press-details">
                 <div class="time-wrapper">
                 <time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>
-                <p class="press-publisher">{excerpt}</p>
+                <p class="press-publisher">{customContent.pressTitle}</p>
                 </div>
                 
                 
@@ -26,9 +28,7 @@
         </div>
     </div>
 
-{.or}
-
-  <!-- no items means no blog posts -->
-  <p><em>No team members yet.</em></p>
 
 {.end}
+</div>
+</div>

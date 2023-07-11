@@ -15,20 +15,22 @@
     
       
       <main class="content-container" role="main" data-content-field="main-content">
-      <div class="page-header flex-center-center">
-        
-        <div class="page-title">
-        {.if collection.mainImage}
-          <div class="header-image" style="background-image: url('{collection.mainImage.assetUrl}'); background-position: {collection.mainImage.mediaFocalPoint} ">
+      <div class="flex-center-center">
+        <div class="page-header  flex-center-center">
+          
+          <div class="page-title">
+          {.if collection.mainImage}
+            <div class="header-image" style="background-image: url('{collection.mainImage.assetUrl}'); background-position: center top ">
 
+            </div>
+            <h1>{collection.title}</h1>
+            {.or}
+            <h1 style="padding: 75px">{collection.title}</h1>
+            {.end}
+            
           </div>
-          <h1>{collection.title}</h1>
-          {.or}
-          <h1 style="padding: 75px">{collection.title}</h1>
-          {.end}
           
         </div>
-        
       </div>
           {squarespace.main-content}
         </main>

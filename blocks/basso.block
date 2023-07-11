@@ -1,0 +1,34 @@
+<style>
+.basso-icon-container {width: 150px;  height: 350px; }
+.basso-block-info {margin-top: 50px; padding-right: 150px; }
+.basso-block img{
+
+  height: 150px; 
+  width: 150px;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+}
+@keyframes rotate{
+  from{ transform: rotate(-360deg); }
+  to{ transform: rotate(360deg); }
+}
+@media screen and (max-width: 1300px) {
+    .basso-block-info {padding-right: 0px; margin-top: 0px;}
+  .basso-block {flex-direction: column; margin: 0; text-align: center;}
+  .basso-icon-container {height: 150px; margin-bottom: 15px;}
+  
+}
+</style>
+<div class="flex-center-center" >
+    <div class="flex-center-center content-child basso-block">
+        <div class="flex-start-start basso-icon-container" >
+            <img src="assets/360advertising.png" alt="360 advertising rotating icon" />
+        </div>
+        <div class="basso-block-info">
+        <squarespace:block-field id="homepageIntro" columns="1"/>
+        </div>
+    </div>
+</div>

@@ -50,18 +50,7 @@ function openHamburger(){
   }
 }
 
-window.addEventListener('resize', function() {
-  
-  if (window.innerWidth < 1070) {
-    mobileMenu.style.display = "none";
-    slice1.style.transform = "rotate(0deg)"
-    slice2.style.transform = "rotate(0deg) translate(0px, 0px)"
-    slice3.style.display = "block"
-  } else {
-    mobileMenu.style.display = "block";
-  }
-  
-});
+
 
 
 </script>

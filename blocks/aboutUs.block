@@ -1,0 +1,48 @@
+<style>
+.about-us-point {margin: 10px; min-width: 100px; text-align: center; width: 100%;  }
+.about-us-point p {font-size: 16px; font-weight: 500;}
+.about-us-point:hover p {font-weight: 600;}
+.about-us-title {padding-right: 20px; max-width: 450px; margin-right:30px;  border-right: 2px solid var(--red); width: 40vw;}
+@media screen and (max-width: 1300px) {
+    .about-us {flex-direction: column;}
+    .about-us-point img {height: 70px;}
+    .about-us-point-container {justify-content: flex-start!important;}
+    .about-us-title {height: 100%; max-width: unset; padding-right: 0px; margin-right:0px;  border-right: 0px solid var(--red); border-left: 2px solid var(--red); padding-left: 10px; margin-bottom: 25px; width: 100%;}
+}
+
+@media screen and (max-width: 600px) {
+    .about-us-title {text-align: center; border-left: 0px; padding-bottom: 10px; margin-bottom: 10px; padding-left: 0px; margin-left: 0px; border-bottom: 2px solid var(--red)}
+    .about-us-point-container {flex-direction: column;}
+}
+
+</style>
+
+<div class="flex-center-center flex-column" style="margin: 50px 40px">
+
+<div class="about-us flex-center-spacebetween content-child">
+    
+    <div class="about-us-title">
+        <h2 style="font-size: 48px; margin: 0; ">35+ years</h2>
+        <p> excelling in brand management and strategy, leading-edge creative services, and full-service marketing and advertising execution</p>
+    </div>
+    <div class="about-us-point-container flex-start-spaceevenly">
+        <div  class="about-us-point hover">
+            <img src="../assets/about-icon-1.png" style="height: 100px" alt="gameplan icon" />
+            <p>Brand Management &amp; Strategy</p>
+            
+        </div>
+        <div class="about-us-point hover">
+            <img src="../assets/about-icon-2.png" style="height: 100px" alt="lightbulb icon"/>
+            <p>Learning-edge Creative Services</p>
+        </div>
+        <div class="about-us-point hover">
+            <img src="../assets/about-icon-3.png" style="height: 100px" alt="loud speaker icon" />
+            <p>Full-Service Marketing &amp; Advertising Execution</p>
+        </div>
+    </div>
+
+</div>
+
+
+<button style="margin-top: 25px" class="dark-outline-button" onclick="window.open('/about#WhatWeDoBest')">What We Do Best</button>
+</div>

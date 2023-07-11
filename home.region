@@ -18,72 +18,63 @@
     </div>
      
     
-
-     <section>
-        <div class="hero-video-container flex-baseline-center">
-          <div class="vimeo-wrapper">
-            <iframe src="https://player.vimeo.com/video/757781283?background=1&autoplay=1&loop=1&byline=0&title=0"  
-                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    <div class="flex-center-center bounce-arrow-container hover" style="margin-top: calc(100vh - 150px)" onclick="window.open('#homepageSection1', '_self')">
-            <img class="bounce-top bounce-arrow" src="assets/arrow.png">
-        </div>
+    <div id="heroPadder" style="height: calc(100vh - 300px);  margin-bottom: 100px;"></div>
+     {@|apply hero.block}
+    {@|apply basso.block}
+    <div class="flex-center-center">
+    <div class="scrolling-client-list">
+      <h2>Expertise in Multiple Categories</h2>
+      <br>
+      <squarespace:query collection="client-list" limit="15">
+        <div class="client-list-grid flex-center-start" id="scrolling-client-list">
+          {.repeated section items}
+          <div class="client hover flex-center-center flex-column">
+            <img src="{assetUrl}" class="client-logo"/>
+            <h6 class="client-title">{title}</h6>
           </div>
+          {.end}
         </div>
-     </section>
-     <section id="homepageSection1" class="flex-start-center basic-padding">
-        <img src="assets/360-circle.svg">
-        <squarespace:block-field id="homepageIntro" columns="1"/>
-     </section>
+      </squarespace:query>
+    </div>
+    </div>
 
-     <section class="scrolling-client-list">
-        <h2>Expertise in Multiple Categories</h2>
-        <br>
-        <squarespace:query collection="client-list" limit="15">
-            <div class="client-list-grid flex-center-start" id="scrolling-client-list">
-                {.repeated section items}
-                <div class="client hover flex-center-center flex-column">
-                    <img src="{assetUrl}" class="client-logo"/>
-                    <h6 class="client-title">{title}</h6>
-                </div>
-                {.end}
-
-            </div>
-
-
-        </squarespace:query>
-     </section>
-
-     <section class="flex-center-center basic-margin">
-        <div style="background: white" class="basic-padding">
-            <div style="border-bottom: 2px solid orange; margin: 50px 0px; width: 250px; ">
-                <h2 class="title">In The Press</h2>
-            </div>
-            <squarespace:query collection="press" limit="2">
-            <div class="flex-center-start">
-                {.repeated section items}
-                    <div onclick="window.open({sourceUrl}, '_blank')">
-                        <h4>{title}</h4>
-                        <script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
-                        <img src={assetLink}/>
-                    </div>
-                    
-                {.end}
-               
+    <div class="flex-center-center">
+	<div style="background: white" class="basic-padding in-the-press">
+		<div style="border-bottom: 2px solid orange; width: 250px; ">
+			<h2 class="title">In The Press</h2>
+		</div>
+		<squarespace:query collection="press" limit="2">
+			<div class="flex-start-start in-the-press-grid">
+				{.repeated section items}
+				<div onclick="window.open({clickThruUrl})" class="press-item hover">
+					<h4>{title}</h4>
+					<script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
+					<img class="hover" src={customContent.pressLogo.assetUrl} style="height: 50px"/>
+				</div>
+				{.end}
+			</div>
+		</squarespace:query>
+		<div class="flex-center-flexend basic-margin" >
+			<a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
+		</div>
+	</div>
+</div>
+{@|apply aboutUs.block}
+{@|apply whatWeDoBest.block}
+    <main class="content-container flex-center-center" role="main" data-content-field="main-content">
+      
+      {squarespace.main-content}
+    </main>
 
 
-            </div>
 
+     
 
-        </squarespace:query>
-        <div class="flex-center-flexend basic-margin" >
-         <a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
-         </div>
-        </div>
-     </section>
+     
+
+     
       <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content">
-       {squarespace.main-content}
-      </main>
+      
 
       <!--Footer with open block field -->
       {@|apply footer.block}
@@ -114,7 +105,7 @@ function moveFirstChildToLast() {
 moveFirstChildToLast();
 
 const clientListGrid = document.querySelector('.client');
-const images = Array.from(clientListGrid.querySelectorAll('.client-image'));
+const images = Array.from(clientListGrid.querySelectorAll('.client-logo'));
 const imageWidth = images[0].offsetWidth;
 
 clientListGrid.addEventListener('mouseover', function() {
