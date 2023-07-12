@@ -6,7 +6,7 @@
 <!-- item loop -->
 {.repeated section items}
 
-    <div class="team-card flex-start-start">
+    <div class="team-card flex-start-start content-child">
         <div class="team-card-wrapper flex-start-start basic-margin">
             <div class="team-card-image-container">
                 <div class="team-card-image" style="background-image: url('{assetUrl}');"></div>

@@ -22,7 +22,7 @@
   
 }
 </style>
-<div class="flex-center-center" >
+<div class="flex-center-center basic-margin" >
     <div class="flex-center-center content-child basso-block">
         <div class="flex-start-start basso-icon-container" >
             <img src="assets/360advertising.png" alt="360 advertising rotating icon" />

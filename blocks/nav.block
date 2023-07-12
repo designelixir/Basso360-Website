@@ -3,13 +3,6 @@
       {@|apply socials.block}
     </div>
 
-<div class="site-navigation-logo-container flex-center-spacebetween">
-    <img src="{website.logoImageUrl}" onclick="window.open('/', '_self')" class="logo hover" alt="Basso360 Logo">
-    <div class="hamburger hover" onclick="openHamburger()">
-        <div class="hamburger-slice" id="slice1"></div>
-        <div class="hamburger-slice" id="slice2"></div>
-        <div class="hamburger-slice" id="slice3"></div>
-    </div>
-</div>
 
-<squarespace:navigation navigationId="siteNav" template="site-navigation" />
+
+

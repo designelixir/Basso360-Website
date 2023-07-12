@@ -11,29 +11,31 @@
     .hamburger-slice {border: 3px solid var(--gray-blue);}
   </style>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} ">
-    {@|apply nav.block}
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+
     
     
       
       <main class="content-container" role="main" data-content-field="main-content">
-      <div class="flex-center-center">
-        <div class="page-header  flex-center-center">
+      <div class="flex-start-start">
+        <div class="page-header content-child flex-center-center">
           
-          <div class="page-title">
+          <div class="page-title flex-start-start flex-column">
           {.if collection.mainImage}
-            <div class="header-image" style="background-image: url('{collection.mainImage.assetUrl}'); background-position: center top ">
-
-            </div>
-            <h1>{collection.title}</h1>
+            
+            <img src="{collection.mainImage.assetUrl}" style="width: 100%; max-width: 1330px;"/>
+            <div class="flex-center-center" style="width: 100%;"><h1>{collection.title}</h1></div>
             {.or}
-            <h1 style="padding: 75px">{collection.title}</h1>
+            <div class="flex-center-center" style="width: 100%;"><h1 style="padding: 75px;">{collection.title}</h1></div>
             {.end}
             
           </div>
           
         </div>
       </div>
+      <div class="content-child">
           {squarespace.main-content}
+          </div>
         </main>
     
 
