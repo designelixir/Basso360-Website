@@ -1,10 +1,11 @@
 
 
 <footer class=" flex-center-spacebetween flex-wrap">
-        <div class="footer-left basic-padding">
-            <button class="dark-outline-button">{websiteSettings.contactEmail}</button>
-            <p>{websiteSettings.contactPhoneNumber}</p>
-            <p>{website.location.addressLine1}, {website.location.addressLine2}</p>
+        <div class="footer-left basic-padding flex-start-start flex-column">
+            
+            <a href="mailto:{websiteSettings.contactEmail}" target="_blank"><i class="material-icons">&#xe0be;</i> info@basso360.com</a>
+            <a href="tel:{websiteSettings.contactPhoneNumber}"><i class="material-icons">&#xe0b0;</i>{websiteSettings.contactPhoneNumber}</a>
+            <a href="https://www.google.com/maps/place/{website.location.addressLine1}{website.location.addressLine2}" target="_blank"><i class="material-icons">&#xe55e;</i>{website.location.addressLine1}, {website.location.addressLine2}</a>
         </div>
         <div class="flex-center-center footer-center">
             <img src="{website.logoImageUrl}" onclick="window.open('/', '_self')" class="logo hover" alt="Basso360 Logo">

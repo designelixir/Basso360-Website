@@ -10,7 +10,7 @@
   --red: #D40000;
 }
 body {background: var(--off-white)}
-
+.material-icons {font-size: inherit!important;}
 
 h1 {font-size: 48px; font-family: "new-spirit", serif;
   font-weight: 400;
@@ -33,6 +33,14 @@ p {font-family: "synthese", sans-serif;
   margin: 0px!important;
   font-style: normal;}
 
+
+a {font-family: "synthese", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0px!important;
+  font-style: normal; text-decoration: none; color: inherit}
+a:hover {text-decoration: underline;}
+
 .white-text {color: white!important;}
 .basic-padding {padding: 20px;}
 .basic-margin {margin: 20px;}
@@ -48,6 +56,7 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
 
 .dark-outline-button:hover {color: var(--off-white); border: 2px solid var(--off-white); background-color: var(--gray-blue);}
 .dark-outline-button {color: var(--gray-blue); border: 2px solid var(--gray-blue); background-color: unset}
+.sqs-block-button .sqs-block-button-element--large {font-weight: 200; background-color: var(--off-white); color: black; border: 2px solid var(--off-white)}
 
 
 .flex-center-center {display: flex; align-items: center; justify-content: center;}
@@ -174,10 +183,11 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
   .in-the-press-grid:first-child img {padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid orange;}
 }
 // Footer 
-footer {z-index: 300;}
+footer {z-index: 300; margin-top: 50px;}
 .footer-right li {list-style-type: none; text-align: right;}
-.interested-block {background: var(--gray-blue); text-align: center; }
-
+.interested-block {background: var(--navy); text-align: center; max-width: 1080px; width: 100%;}
+.interested-block h2 {color: white;padding-top: 10px;}
+.footer-left a {margin: 5px 0px;}
 @media screen and (max-width: 1070px) {
   .footer-right {width: 100%; border-top: 1px solid black; padding: 40px;}
   .footer-right li {text-align: center;}
