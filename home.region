@@ -74,7 +74,10 @@
 
      
       <!-- cms content injection point -->
-      
+      <div class="interested-block content-child basic-padding">
+        <squarespace:block-field id="interestedBlock-{squarespace.page-id}" columns="12"/>
+
+</div>
 
       <!--Footer with open block field -->
       {@|apply footer.block}
