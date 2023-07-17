@@ -45,7 +45,7 @@
       
 
       <!--Footer with open block field -->
-      
+      {@|apply interest.block}
       {@|apply footer.block}
 
     
