@@ -4,19 +4,18 @@
 </div>
 
 <!-- item loop -->
-
-{.equal?:tagFilter:"Team Member" }
-    {.repeated section items}
+{.repeated section items}
+    {.if customContent.teamMemberTitle}
     <div class="team-card flex-start-start content-child">
         <div class="team-card-wrapper flex-start-start basic-margin">
             <div class="team-card-image-container">
                 <div class="team-card-image" style="background-image: url('{assetUrl}');"></div>
                 <br>
                 <h3 class="team-title">{title}</h3>
-                <p class="team-job-title">{categories}</p>
+                <p class="team-job-title">{customContent.teamMemberTitle}</p>
                 <br>
-                {.if sourceUrl}
-                    <a href="mailto:{sourceUrl}" target="_blank"><img src="assets/email.png" class="icon hover"></a>
+                {.if clickthroughUrl}
+                    <a href="{clickthroughUrl}" target="_blank" class="email-icon"><img src="assets/email.png" class="icon hover"></a>
                 {.end}
             </div>
             <div class="team-card-description">
@@ -26,5 +25,25 @@
         </div>
     </div>
     {.end}
+    
 {.end}
 
+<div style="border-bottom: 2px solid orange; margin: 50px 0px; width: 300px; ">
+    <h2 class="title">What We Do Best</h2>
+</div>
+
+<div class="flex-start-start-start">
+<squarespace:query collection="about" limit="3" tag="Team Skill">
+        <div class="flex-start-start flex-wrap">
+        {.repeated section items}
+        <div class="team-strengths-card">
+            <div class="team-strengths-icon" style="background-image: url({assetUrl})"></div>
+            <h4 class="team-strengths-title">{title}</h4>
+            <p>{body}</p>
+        </div>
+        {.end}
+        </div>
+      </squarespace:query>
+</div>
+
+{@|apply interested.block}
