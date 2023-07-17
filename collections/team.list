@@ -4,8 +4,9 @@
 </div>
 
 <!-- item loop -->
-{.repeated section items}
 
+{.equal?:tagFilter:"Team Member" }
+    {.repeated section items}
     <div class="team-card flex-start-start content-child">
         <div class="team-card-wrapper flex-start-start basic-margin">
             <div class="team-card-image-container">
@@ -24,10 +25,6 @@
             </div>
         </div>
     </div>
-
-{.or}
-
-  <!-- no items means no blog posts -->
-  <p><em>No team members yet.</em></p>
-
+    {.end}
 {.end}
+

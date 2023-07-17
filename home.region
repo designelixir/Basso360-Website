@@ -26,7 +26,7 @@
     <div class="scrolling-client-list">
       <h2>Expertise in Multiple Categories</h2>
       <br>
-      <squarespace:query collection="client-list" limit="15">
+      <squarespace:query collection="client-list" limit="15" featured="true">
         <div class="client-list-grid flex-center-start" id="scrolling-client-list">
           {.repeated section items}
           <div class="client hover flex-center-center flex-column">
@@ -62,6 +62,30 @@
 </div>
 {@|apply aboutUs.block}
 {@|apply whatWeDoBest.block}
+<div class="flex-center-center">
+	<div style="background: white" class="basic-padding basic-margin max-width">
+		<div style="border-bottom: 2px solid orange; width: 250px; ">
+			<h2 class="title">Our Clients</h2>
+		</div>
+    <br>
+    <p><i>View our recent work with these star clients:</i></p>
+		<squarespace:query collection="client-list" limit="15" category="Clients">
+        <div class="flex-center-center flex-wrap">
+          {.repeated section items}
+          <div class="featured-client hover flex-center-center flex-column">
+            <img src="{assetUrl}" class="featured-client-logo hover"/>
+          </div>
+          {.end}
+        </div>
+      </squarespace:query>
+		<div class="flex-center-flexend basic-margin" >
+			<a href='/work' target="_blank" class="continue-to-article">View All of Our Work &rarr;</a>
+		</div>
+	</div>
+</div>
+<div class="flex-center-center flex-wrap" style="background-color: white;">
+
+</div>
 {@|apply interested.block}
     <main class="content-container flex-center-center" role="main" data-content-field="main-content">
       
