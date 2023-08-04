@@ -28,7 +28,7 @@
             <div class="basic-padding">
                 <h3>{collection.title}</h3>
                 <p>{collection.description}</p><br>
-                <a class="contact-link" href="tel:{websiteSettings.contactPhoneNumber}"><i class="fa fa-phone" aria-hidden="true"></i> {websiteSettings.contactPhoneNumber}</a><br><br>
+                <a class="contact-link" href="tel:{websiteSettings.contactPhoneNumber}"><i class="fa fa-phone" style="font-size:18px" aria-hidden="true"></i> {websiteSettings.contactPhoneNumber}</a><br><br>
                 <a class="contact-link" href="https://goo.gl/maps/vMHdhUgZJVpJ1kF3A" target="_blank"> <i class="fa fa-map-pin" aria-hidden="true"></i> {website.location.addressLine1} <br> {website.location.addressLine2}</a><br><br>
                 <a class="contact-link" href="mailto:{websiteSettings.contactEmail}"><i style="font-size:18px" class="fa">&#xf0e0;</i> {websiteSettings.contactEmail}</a>
                 <squarespace:block-field id="contactSocial" columns="12"/>
