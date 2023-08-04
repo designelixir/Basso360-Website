@@ -9,58 +9,45 @@
      
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-
-    <div class="site-container">
-
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} flex-start-start" style="overflow: scroll!important;">
     
-  <div class="nav-spacer">
-    <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+    <div class="nav-spacer">
+      <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     </div>
-     
-    
-    
-     {@|apply hero.block}
-    {@|apply basso.block}
+    <main role="main" data-content-field="main-content">
+      <div class="hero-overlay">
+        {@|apply hero.block}
+      </div>   
+      {@|apply basso.block}
+      <div class="flex-center-center">
+      <div class="scrolling-client-list">
+        <h2>Expertise in Multiple Categories</h2>
+        <br>
+        {@|apply clientList.block}
+      </div>
+    </div>
+
     <div class="flex-center-center">
-    <div class="scrolling-client-list">
-      <h2>Expertise in Multiple Categories</h2>
-      <br>
-      <squarespace:query collection="client-list" limit="15" featured="true">
-        <div class="client-list-grid flex-center-start" id="scrolling-client-list">
+	    <div style="background: white" class="basic-padding in-the-press">
+		    <div class="orange-title-border">
+        <h2 class="title">In The Press</h2>
+      </div>
+      <squarespace:query collection="press" limit="2">
+        <div class="flex-start-start in-the-press-grid">
           {.repeated section items}
-          <div class="client hover flex-center-center flex-column">
-            <img src="{assetUrl}" class="client-logo"/>
-            <h6 class="client-title">{title}</h6>
+          <div onclick="window.open({clickThruUrl})" class="press-item hover">
+            <h4>{title}</h4>
+            <script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
+            <img class="hover" src={customContent.pressLogo.assetUrl} style="height: 50px"/>
           </div>
           {.end}
         </div>
       </squarespace:query>
-    </div>
-    </div>
-
-    <div class="flex-center-center">
-	<div style="background: white" class="basic-padding in-the-press">
-		<div style="border-bottom: 2px solid orange; width: 250px; ">
-			<h2 class="title">In The Press</h2>
-		</div>
-		<squarespace:query collection="press" limit="2">
-			<div class="flex-start-start in-the-press-grid">
-				{.repeated section items}
-				<div onclick="window.open({clickThruUrl})" class="press-item hover">
-					<h4>{title}</h4>
-					<script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
-					<img class="hover" src={customContent.pressLogo.assetUrl} style="height: 50px"/>
-				</div>
-				{.end}
-			</div>
-		</squarespace:query>
-		<div class="flex-center-flexend basic-margin" >
-			<a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
-		</div>
+      <div class="flex-center-flexend basic-margin" >
+        <a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
+      </div>
 	</div>
-</div>
-{@|apply aboutUs.block}
+  {@|apply aboutUs.block}
 {@|apply whatWeDoBest.block}
 <div class="flex-center-center">
 	<div style="background: white" class="basic-padding basic-margin max-width">
@@ -83,29 +70,11 @@
 		</div>
 	</div>
 </div>
-<div class="flex-center-center flex-wrap" style="background-color: white;">
-
-</div>
-{@|apply interested.block}
-    <main class="content-container flex-center-center" role="main" data-content-field="main-content">
-      
       {squarespace.main-content}
-    </main>
-
-
-
-     
-
-     
-
-     
-      <!-- cms content injection point -->
-      
-
-      <!--Footer with open block field -->
       {@|apply footer.block}
+    </main>
+    
 
-    </div>
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

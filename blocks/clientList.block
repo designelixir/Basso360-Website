@@ -1,0 +1,10 @@
+<squarespace:query collection="client-list" limit="15" featured="true">
+          <div class="client-list-grid flex-center-start" id="scrolling-client-list">
+            {.repeated section items}
+            <div class="client hover flex-center-center flex-column">
+              <img src="{assetUrl}" class="client-logo"/>
+              <h6 class="client-title">{title}</h6>
+            </div>
+            {.end}
+          </div>
+        </squarespace:query>
