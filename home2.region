@@ -12,8 +12,7 @@
     
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     
-      <main role="main" data-content-field="main-content" style="padding-top: 100vh">
-      {@|apply hero.block}
+      <main role="main" data-content-field="main-content">
       {@|apply basso.block}
       <div class="scrolling-client-list">
 				<div class="slider-area">
@@ -54,9 +53,9 @@
 			</div>
 			{@|apply aboutUs.block}
 			{@|apply whatWeDoBest.block}
-			
-				<div style="background: white" class="basic-padding" style="margin-bottom: 50px;">
-					<div class="blue-title-border">
+			<div class="flex-center-center">
+				<div style="background: white" class="basic-padding basic-margin max-width">
+					<div style="border-bottom: 2px solid orange; width: 250px; ">
 						<h2 class="title">Our Clients</h2>
 					</div>
 					<br>
@@ -74,10 +73,12 @@
 						<a href='/work' target="_blank" class="continue-to-article">View All of Our Work &rarr;</a>
 					</div>
 				</div>
-			
-      {squarespace.main-content}
+			</div>
+      <div class="content-child">
+        {squarespace.main-content}
         {@|apply interested.block}
         {@|apply footer.block}
+      </div>
         </main>
     
 

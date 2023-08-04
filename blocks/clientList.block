@@ -1,5 +1,0 @@
-<div class="scrolling-client-list">
-        <h2>Expertise in Multiple Categories</h2>
-        <br>
-        <squarespace:block-field id="clientListBlock" columns="1"/>
-      </div>

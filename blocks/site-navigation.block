@@ -1,115 +1,95 @@
 <style>
-.site-navigation-container {position: fixed; top: 0; left: 0; max-width: 200px; z-index: 300000000; }
-.site-navigation-list {width: 109px;}
-#mobile-menu-overlay {width: 100vw; background-color: rgba(255,255,255, 0.5); height: 100vh; position: fixed; top: 0; left: 0; z-index: 2000000; display: none;}
-.nav-bar { padding: 25px 1.5vw;  width: 200px; }
-
-.site-navigation-item { padding: 5px 0px;}
-.site-navigation-item a {font-family: 'Nitti', sans-serif; text-decoration: none; font-size: 18px; margin: 25px 0px; text-transform: uppercase; color: var(--navy); font-weight: 100;}
-.site-navigation-item a:hover {text-decoration: underline; font-weight: 500;}
-.active-link a{text-decoration: underline; color: var(--green-blue)}
-#floating-nav { width: 200px;}
-.logo {max-height: 50px;}
-.hamburger {display: none;}
-.hamburger-slice {border: 3px solid var(--navy); border-radius: 8px; width: 40px; height: 1px; margin: 8px 0px; }
-#slice1 {transform: rotate(0deg)}
-#slice2 {transform: rotate(0deg) translate(0,0)}
-#slice3 {display: block;}
-#mobile-social-icons {display: none; margin-top: 15px;}
-
-@media screen and (max-width: 1000px) {
-  .logo {max-height: 50px; }
-  .hamburger {display: block;}
-  #floating-nav {display: none; padding: 15px; width: 100%;}
-  .site-navigation {width: 100%; height: 100%;}
-  .site-navigation-container {background: var(--off-white); width: 100%; max-width: unset; box-shadow: 2px 2px 2px rgba(0,0,0,0.1);}
-  .nav-bar { width: 100%; padding: 25px;}
-  .site-navigation-list {width: unset; text-align: center; align-items: center; justify-content: center; border-top: 2px solid var(--gray-blue); padding-top: 15px; }
-  .site-navigation-item a {font-size: 32px; }
-  .site-navigation-item {padding: 20px 0px; text-align: center;}
-  .socials-floating-block {display: none;}
-}
-
+	.site-navigation-container {position: fixed; top: 0; left: 0; max-width: 200px; z-index: 300000000; }
+	.site-navigation-list {width: 109px;}
+	#mobile-menu-overlay {width: 100vw; background-color: rgba(255,255,255, 0.5); height: 100vh; position: fixed; top: 0; left: 0; z-index: 2000000; display: none;}
+	.nav-bar { padding: 25px 1.5vw;  width: 200px; }
+	.site-navigation-item { padding: 5px 0px;}
+	.site-navigation-item a {font-family: 'Nitti', sans-serif; text-decoration: none; font-size: 18px; margin: 25px 0px; text-transform: uppercase; color: var(--navy); font-weight: 100;}
+	.site-navigation-item a:hover {text-decoration: underline; font-weight: 500;}
+	.active-link a{text-decoration: underline; color: var(--green-blue)}
+	#floating-nav { width: 200px;}
+	.logo {max-height: 50px;}
+	.hamburger {display: none;}
+	.hamburger-slice {border: 3px solid var(--navy); border-radius: 8px; width: 40px; height: 1px; margin: 8px 0px; }
+	#slice1 {transform: rotate(0deg)}
+	#slice2 {transform: rotate(0deg) translate(0,0)}
+	#slice3 {display: block;}
+	#mobile-social-icons {display: none; margin-top: 15px;}
+	@media screen and (max-width: 1000px) {
+	.logo {max-height: 50px; }
+	.hamburger {display: block;}
+	#floating-nav {display: none; padding: 15px; width: 100%;}
+	.site-navigation {width: 100%; height: 100%;}
+	.site-navigation-container {background: var(--off-white); width: 100%; max-width: unset; box-shadow: 2px 2px 2px rgba(0,0,0,0.1);}
+	.nav-bar { width: 100%; padding: 25px;}
+	.site-navigation-list {width: unset; text-align: center; align-items: center; justify-content: center; border-top: 2px solid var(--gray-blue); padding-top: 15px; }
+	.site-navigation-item a {font-size: 32px; }
+	.site-navigation-item {padding: 20px 0px; text-align: center;}
+	.socials-floating-block {display: none;}
+	}
 </style>
-
-<nav class="site-navigation-container slide-in-left">
-
-  <div class="nav-bar flex-center-spacebetween" >
-    <img src="{website.logoImageUrl}" onclick="window.open('/', '_self')" class="logo hover" alt="Basso360 Logo">
-    <div class="hamburger hover" onclick="openHamburger()">
-        <div class="hamburger-slice" id="slice1"></div>
-        <div class="hamburger-slice" id="slice2"></div>
-        <div class="hamburger-slice" id="slice3"></div>
-    </div>
-  </div>
-  <div id="floating-nav" class="fade-in flex-center-center" >
-    <div class="site-navigation-list flex-start-start flex-column" >
-      {.repeated section items}
-        <span class="site-navigation-item  {.section active} active-link{.end}">
-
-          <!-- collection link -->
-          {.section collection}
-            <a href="{fullUrl}" >{navigationTitle}</a>
-          {.end}
-
-          <!-- external link -->
-          {.section externalLink}
-            <a href="{url}"{.section newWindow} target="_blank"{.end}>
-              {title}
-            </a>
-          {.end}
-
-        </span>
-          
-      {.end}
-      <div id="mobile-social-icons">
-      {@|apply socials.block}
-      </div>
-    </div>
-  </div>
-
-</nav>
-
-
-
-</nav>
+<div class="nav-spacer">
+	<nav class="site-navigation-container slide-in-left">
+		<div class="nav-bar flex-center-spacebetween" >
+			<img src="{website.logoImageUrl}" onclick="window.open('/', '_self')" class="logo hover" alt="Basso360 Logo">
+			<div class="hamburger hover" onclick="openHamburger()">
+				<div class="hamburger-slice" id="slice1"></div>
+				<div class="hamburger-slice" id="slice2"></div>
+				<div class="hamburger-slice" id="slice3"></div>
+			</div>
+		</div>
+		<div id="floating-nav" class="fade-in flex-center-center" >
+			<div class="site-navigation-list flex-start-start flex-column" >
+				{.repeated section items}
+				<span class="site-navigation-item  {.section active} active-link{.end}">
+					<!-- collection link -->
+					{.section collection}
+					<a href="{fullUrl}" >{navigationTitle}</a>
+					{.end}
+					<!-- external link -->
+					{.section externalLink}
+					<a href="{url}"{.section newWindow} target="_blank"{.end}>
+					{title}
+					</a>
+					{.end}
+				</span>
+				{.end}
+				<div id="mobile-social-icons">
+					{@|apply socials.block}
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
 
 <div class="socials-floating-block slide-in-right">
-    {@|apply socials.block}
-    </div>
-
-
+	{@|apply socials.block}
+</div>
 <div id="mobile-menu-overlay" onclick="openHamburger()"></div>
 
+
 <script>
-
-
-var mobileMenu = document.getElementById('floating-nav');
-var slice1 = document.getElementById('slice1');
-var slice2 = document.getElementById('slice2')
-var slice3 = document.getElementById('slice3')
-var overlay = document.getElementById('mobile-menu-overlay')
-var mobileSocialIcons = document.getElementById('mobile-social-icons')
-function openHamburger(){
-  if (mobileMenu.style.display === "block"){
-    mobileMenu.style.display = "none";
-    slice1.style.transform = "rotate(0deg)"
-    slice2.style.transform = "rotate(0deg) translate(0px, 0px)"
-    slice3.style.display = "block"
-    mobileSocialIcons.style.display = "none"
-    overlay.style.display = "none"
-  } else {
-    mobileMenu.style.display = "block"
-    slice1.style.transform = "rotate(45deg)"
-    slice2.style.transform = "rotate(-45deg) translate(10px, -10px)"
-    slice3.style.display = "none"
-    mobileSocialIcons.style.display = "block"
-    overlay.style.display = "block"
-  }
-}
-
-
-
-
+	var mobileMenu = document.getElementById('floating-nav');
+	var slice1 = document.getElementById('slice1');
+	var slice2 = document.getElementById('slice2')
+	var slice3 = document.getElementById('slice3')
+	var overlay = document.getElementById('mobile-menu-overlay')
+	var mobileSocialIcons = document.getElementById('mobile-social-icons')
+	function openHamburger(){
+	  if (mobileMenu.style.display === "block"){
+	    mobileMenu.style.display = "none";
+	    slice1.style.transform = "rotate(0deg)"
+	    slice2.style.transform = "rotate(0deg) translate(0px, 0px)"
+	    slice3.style.display = "block"
+	    mobileSocialIcons.style.display = "none"
+	    overlay.style.display = "none"
+	  } else {
+	    mobileMenu.style.display = "block"
+	    slice1.style.transform = "rotate(45deg)"
+	    slice2.style.transform = "rotate(-45deg) translate(10px, -10px)"
+	    slice3.style.display = "none"
+	    mobileSocialIcons.style.display = "block"
+	    overlay.style.display = "block"
+	  }
+	}
 </script>
-
