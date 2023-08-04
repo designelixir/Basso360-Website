@@ -21,7 +21,7 @@
           <img src="{collection.mainImage.assetUrl}" style="width: 100%; max-width: 1330px;"/>
           <div class="flex-center-center" style="width: 100%;"><h2>{collection.title}</h2></div>
           {.or}
-          <div class="flex-center-center" style="width: 100%;"><h2 style="padding: 75px;">{collection.title}</h2></div>
+          <div class="flex-center-center" style="width: 100%;"><h2 style="padding: 25px;">{collection.title}</h2></div>
           {.end}
         </div>
       </div>
