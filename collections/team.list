@@ -1,11 +1,11 @@
 
-<div style="border-bottom: 2px solid orange; margin: 50px 0px; width: 160px; ">
+<div class="orange-title-border">
 <h2 class="title">Our Team</h2>
 </div>
 
 <!-- item loop -->
 {.repeated section items}
-    {.if customContent.teamMemberTitle}
+    {.if starred}
     <div class="team-card flex-start-start content-child">
         <div class="team-card-wrapper flex-start-start basic-margin">
             <div class="team-card-image-container">
@@ -17,6 +17,7 @@
                 {.if clickthroughUrl}
                     <a href="{clickthroughUrl}" target="_blank" class="email-icon"><img src="assets/email.png" class="icon hover"></a>
                 {.end}
+            
             </div>
             <div class="team-card-description">
                 <p class="team-excerpt">{excerpt}</p>
@@ -28,21 +29,25 @@
     
 {.end}
 
-<div style="border-bottom: 2px solid orange; margin: 50px 0px; width: 300px; ">
-    <h2 class="title">What We Do Best</h2>
+<div class="orange-title-border">
+    <h4 class="title">What We Do Best</h4>
 </div>
 
-<div class="flex-start-start-start">
-<squarespace:query collection="about" limit="3" tag="Team Skill">
-        <div class="flex-start-start flex-wrap">
-        {.repeated section items}
-        <div class="team-strengths-card">
+{.repeated section items}
+    {.if starred}{.or}
+    
+        <div class="team-card-wrapper flex-start-start basic-margin">
+            <div class="team-strengths-card flex-start-start">
             <div class="team-strengths-icon" style="background-image: url({assetUrl})"></div>
-            <h4 class="team-strengths-title">{title}</h4>
-            <p>{body}</p>
+            <div class="team-strengths-text">
+                <h4 class="team-strengths-title">{title}</h4>
+                <p>{body}</p>
+            </div>
         </div>
-        {.end}
         </div>
-      </squarespace:query>
-</div>
+    
+    {.end}
+    
+{.end}
+
 
