@@ -20,11 +20,11 @@
 @media screen and (max-width: 1000px) {
   .logo {max-height: 50px; }
   .hamburger {display: block;}
-  #floating-nav {display: none; padding: 50px; width: 100%;}
+  #floating-nav {display: none; padding: 15px; width: 100%;}
   .site-navigation {width: 100%; height: 100%;}
   .site-navigation-container {background: var(--off-white); width: 100%; max-width: unset; box-shadow: 2px 2px 2px rgba(0,0,0,0.1);}
   .nav-bar { width: 100%; padding: 25px;}
-  .site-navigation-list {width: unset; text-align: center; align-items: center; justify-content: center;}
+  .site-navigation-list {width: unset; text-align: center; align-items: center; justify-content: center; border-top: 2px solid var(--gray-blue); padding-top: 15px; }
   .site-navigation-item a {font-size: 32px; }
   .site-navigation-item {padding: 20px 0px; text-align: center;}
   .socials-floating-block {display: none;}
