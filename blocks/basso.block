@@ -1,6 +1,6 @@
 <style>
-.basso-icon-container {width: 150px;  height: 350px; }
-.basso-block-info {margin-top: 50px; padding-right: 150px; }
+.basso-icon-container {width: 150px;  height: 150px; border: 1px solid red; }
+.basso-block-info { padding-right: 150px; }
 .basso-block img{
 
   height: 150px; 
@@ -22,7 +22,7 @@
   
 }
 </style>
-<div class="flex-center-center" style="margin-top: 110vh;">
+<div class="flex-center-center flex-column" style="margin-top: 110vh;">
     <div class="flex-center-center basso-block">
         <div class="flex-start-start basso-icon-container" >
             <img src="assets/360advertising.png" alt="360 advertising rotating icon" />
@@ -31,4 +31,5 @@
         <squarespace:block-field id="homepageIntro" columns="1"/>
         </div>
     </div>
+    <squarespace:block-field id="homepageIntroButton" columns="1"/>
 </div>
