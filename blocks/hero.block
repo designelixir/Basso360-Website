@@ -1,4 +1,4 @@
-<section>
+<div class="hero-overlay">
 	<div class="hero-video-container flex-baseline-center">
 		<div class="vimeo-wrapper">
 			<iframe src="https://player.vimeo.com/video/757781283?background=1&autoplay=1&loop=1&byline=0&title=0"  
@@ -8,4 +8,4 @@
             <img class="bounce-top bounce-arrow" src="assets/arrow.png">
         </div>
 	</div>
-</section>
+</div>

@@ -14,46 +14,13 @@
     <div class="nav-spacer">
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
     </div>
-    <main role="main" data-content-field="main-content">
-      <div class="hero-overlay">{@|apply hero.block}</div>   
+    {@|apply hero.block}
+    <main role="main" data-content-field="main-content" style="padding-top: 110vh">
+      
       {@|apply basso.block}
-      <div class="flex-center-center">
-      <div class="scrolling-client-list">
-        <h2>Expertise in Multiple Categories</h2>
-        <br>
-        <squarespace:query collection="client-list" limit="15" featured="true">
-          <div class="client-list-grid flex-center-start" id="scrolling-client-list">
-            {.repeated section items}
-            <div class="client hover flex-center-center flex-column">
-              <img src="{assetUrl}" class="client-logo"/>
-              <h6 class="client-title">{title}</h6>
-            </div>
-            {.end}
-          </div>
-        </squarespace:query>
-      </div>
-    </div>
+      {@|apply inThePress.block}
 
-    <div class="flex-center-center">
-	    <div style="background: white" class="basic-padding in-the-press">
-		    <div class="orange-title-border">
-        <h2 class="title">In The Press</h2>
-      </div>
-      <squarespace:query collection="press" limit="2">
-        <div class="flex-start-start in-the-press-grid">
-          {.repeated section items}
-          <div onclick="window.open({clickThruUrl})" class="press-item hover">
-            <h4>{title}</h4>
-            <script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
-            <img class="hover" src={customContent.pressLogo.assetUrl} style="height: 50px"/>
-          </div>
-          {.end}
-        </div>
-      </squarespace:query>
-      <div class="flex-center-flexend basic-margin" >
-        <a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
-      </div>
-	</div>
+    
   {@|apply aboutUs.block}
 {@|apply whatWeDoBest.block}
 <div class="flex-center-center">

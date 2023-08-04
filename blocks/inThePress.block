@@ -1,0 +1,20 @@
+<div style="background: white" class="basic-padding in-the-press">
+    <div class="orange-title-border">
+        <h2 class="title">In The Press</h2>
+      </div>
+      <squarespace:query collection="press" limit="2">
+        <div class="flex-start-start in-the-press-grid">
+          {.repeated section items}
+          <div onclick="window.open({clickThruUrl})" class="press-item hover">
+            <h4>{title}</h4>
+            <script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
+            <img class="hover" src={customContent.pressLogo.assetUrl} style="height: 50px"/>
+          </div>
+          {.end}
+        </div>
+      </squarespace:query>
+      <div class="flex-center-flexend" >
+        <a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
+      </div>
+</div>
+	
