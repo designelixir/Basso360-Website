@@ -4,23 +4,14 @@
 {.repeated section items}
 
     <div class="press-card flex-start-start">
-        <div class=" flex-start-start basic-margin">
-            
-            
-            <img src="{assetUrl}" class="press-image"/>
-                
-            
-            
+        <div class="flex-start-start press-info">
+            <img src="{assetUrl}" class="press-image" alt="article image" />
             <div class="press-details">
                 <div class="time-wrapper">
                 <time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>
                 <p class="press-publisher">{customContent.pressTitle}</p>
                 </div>
-                
-                
                 <h4 class="press-title">{title}</h4>
-                
-                
                 {.if sourceUrl}
                     <a href={sourceUrl} target="_blank" class="continue-to-article">Continue to Article &rarr;</a>
                 {.end}
@@ -28,6 +19,7 @@
         </div>
     </div>
 
+    
 
 {.end}
 </div>

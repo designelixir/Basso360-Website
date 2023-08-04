@@ -7,47 +7,31 @@
     <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
-  <style>
-    .hamburger-slice {border: 3px solid var(--gray-blue);}
-  </style>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} ">
-        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
 
-    
-    
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} flex-start-start">
+      <div class="nav-spacer">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+    </div>  
+      <main role="main" data-content-field="main-content">
+      <h1 class="page-title-solo">{collection.navigationTitle}</h1>
       
-      <main class="content-container" role="main" data-content-field="main-content">
-      <div class="flex-start-start">
-        <div class="page-header content-child flex-center-center">
-          
-          <div class="page-title flex-start-start flex-column">
-          {.if collection.mainImage}
-            
-            <img src="{collection.mainImage.assetUrl}" style="width: 100%; max-width: 1330px;"/>
-            <div class="flex-center-center" style="width: 100%;"><h1>{collection.title}</h1></div>
-            {.or}
-            <div class="flex-center-center" style="width: 100%;"><h1 style="padding: 75px;">{collection.title}</h1></div>
-            {.end}
-            
-          </div>
-          
+      <div class="page-header content-child flex-center-center">
+        <div class="page-title flex-start-start flex-column">
+        {.if collection.mainImage}
+          <img src="{collection.mainImage.assetUrl}" style="width: 100%; max-width: 1330px;"/>
+          <div class="flex-center-center" style="width: 100%;"><h2>{collection.title}</h2></div>
+          {.or}
+          <div class="flex-center-center" style="width: 100%;"><h2 style="padding: 75px;">{collection.title}</h2></div>
+          {.end}
         </div>
       </div>
-      <div class="content-child">
-          {squarespace.main-content}
-          </div>
-        </main>
-    
-
-    
-
-      <!-- cms content injection point -->
       
-
-      <!--Footer with open block field -->
-      {@|apply interested.block}
-      {@|apply footer.block}
-
+      <div class="content-child">
+        {squarespace.main-content}
+        {@|apply interested.block}
+        {@|apply footer.block}
+      </div>
+        </main>
     
 
     <!-- combo and minify scripts when not logged in -->

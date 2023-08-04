@@ -1,5 +1,4 @@
-<div class="flex-center-center">
-<div class="interested-block max-width basic-padding basic-margin">
+<br>
+<div class="interested-block max-width basic-padding">
     <squarespace:block-field id="interestedBlock-{squarespace.page-id}" columns="12"/>
-</div>
 </div>
