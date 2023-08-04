@@ -13,7 +13,7 @@
                 </div>
                 <h4 class="press-title">{title}</h4>
                 {.if sourceUrl}
-                    <a href={sourceUrl} target="_blank" class="continue-to-article">Continue to Article &rarr;</a>
+                    <a href={sourceUrl} target="blank" class="continue-to-article">Continue to Article &rarr;</a>
                 {.end}
             </div>
         </div>
