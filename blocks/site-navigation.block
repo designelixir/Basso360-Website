@@ -65,7 +65,7 @@
       </p>
 
     {.end}
-    <p id="mobile-social-icons"><squarespace:block-field id="socialBlocks" columns="1" /></p>
+    
   </div>
   </div>
 
