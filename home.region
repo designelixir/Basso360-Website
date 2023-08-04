@@ -18,6 +18,7 @@
     <main role="main" data-content-field="main-content" style="padding-top: 110vh">
       
       {@|apply basso.block}
+      {@|apply clientList.block}
       {@|apply inThePress.block}
 
     
