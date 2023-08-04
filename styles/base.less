@@ -28,7 +28,7 @@ h6 {font-size: 18px; color: gray; font-family: 'nitti', monospace; padding: 0;}
 time {font-size: 16px; font-family: 'nitti', monospace; text-transform: uppercase; padding: 25px 0px; color: gray;}
 
 .title {font-family: 'nitti', monospace; font-weight: 200; text-transform: uppercase; font-size: 24px;  }
-.orange-title-border {border-bottom: 2px solid orange; margin: 50px 0px; width: 300px;}
+.orange-title-border {border-bottom: 2px solid var(--gray-blue); margin: 50px 0px; width: 300px;}
 p {font-family: "synthese", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -139,7 +139,7 @@ h2 {font-size: 32px; line-height: 36px;}
   
   
   .orange-title-border {width: 100%;}
-  .title {text-align: center;}
+  
   .page-title {width: 100%; margin: 0;}
   .header-image {height: 200px;}
 }
@@ -174,20 +174,24 @@ border-top: 0px!important; border-left: 0px!important; border-right: 0px!importa
 .team-card-image {width: 100%; height: 400px; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 .team-title {font-size: 32px; color: var(--navy)}
 .team-job-title {font-size: 18px; font-family: 'nitti', serif; text-transform: uppercase; color: var(--navy); opacity: 0.75; margin: 0px;}
-.team-strengths-title {color: var(--navy); text-align: center;}
-.team-strengths-card h4 {font-size: 18px; font-weight: 600;}
+.team-strengths-title {color: var(--navy); padding-left: 10px;}
+.team-strengths-card h4 {font-size: 24px; font-weight: 600;}
 .team-strengths-card p {font-size: 16px; color: rgba(0,0,0,0.8)}
-.team-strengths-icon {height: 150px; width: 150px; background-size: contain; margin-top: 50px; background-repeat: no-repeat; background-position: center center;}
-.team-strengths-card {padding: 10px; width: 100%;}
-.team-strengths-text {margin-left: 25px;}
-.expertise-tag {font-size: 14px; background-color: var(--gray-blue); border-radius: 15px; padding: 5px; margin: 15px;color: white;}
-@media screen and (max-width: 800px) {
+.team-strengths-icon {height: 200px; width: 200px; background-size: contain; background-repeat: no-repeat; background-position: center center;}
+.team-strengths-card {padding: 10px; margin-bottom: 50px;  width: 100%;}
+.team-strengths-text {padding-left: 25px; width: 90%; }
+.expertise-tag {font-size: 14px;  color: var(--navy); border-radius: 15px; padding: 5px 10px; font-family: 'synthese', sans-serif;}
+.expertise-tag:hover {font-weight: 800;}
+@media screen and (max-width: 1000px) {
   .team-card-wrapper {flex-wrap: wrap;}
-  .team-card-image-container {width: 100%; max-width: 100%; margin-right: 0;}
+  .team-card-image-container {width: 100%; max-width: 100%;  margin-right: 0; background-position: 0 0;}
   .team-card-description {border-top: 1px solid black; border-left: none; padding-top: 15px; padding-left: 0px; margin-top: 15px;}
   .email-icon {margin-top: 10px; }
   .team-card-image {height: 400px;}
-  .team-strengths-card {width: 100%; max-width: unset; display: flex; align-items: center; justify-content: center; flex-direction: column;}
+  .team-strengths-title {font-size: 16px;}
+  .team-strengths-text {margin-left: unset; width: 100%; padding-left: unset;}
+  .team-strengths-card {width: 100%;  max-width: unset; display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; }
+  .team-strengths-card p {font-size: 18px;}
 }
 
 // Press Page
@@ -210,7 +214,7 @@ border-top: 0px!important; border-left: 0px!important; border-right: 0px!importa
   .time-wrapper {border-bottom: 0px solid black; }
   .press-card {box-shadow: 0px 1px 3px var(--gray-blue);}
   .in-the-press-grid {flex-direction: column;}
-  .in-the-press-grid:first-child img {padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid orange;}
+  .in-the-press-grid:first-child img {padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--gray-blue);}
 }
 // Footer 
 footer {z-index: 300; margin-top: 50px;}

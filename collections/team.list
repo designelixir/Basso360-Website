@@ -36,15 +36,22 @@
 {.repeated section items}
     {.if starred}{.or}
     
-        <div class="team-card-wrapper flex-start-start basic-margin">
-            <div class="team-strengths-card flex-start-start">
+        
+            <div class="team-strengths-card flex-center-start">
             <div class="team-strengths-icon" style="background-image: url({assetUrl})"></div>
             <div class="team-strengths-text">
                 <h4 class="team-strengths-title">{title}</h4>
-                <p>{body}</p>
+                
+                {.if tags}
+                <div class="flex-start-start flex-wrap">
+                    {.repeated section tags}
+                        <span class="expertise-tag">{@}</span>
+                    {.end}
+                </div>
+                {.end}
             </div>
         </div>
-        </div>
+        
     
     {.end}
     
