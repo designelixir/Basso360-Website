@@ -50,10 +50,13 @@ a:hover {text-decoration: underline;}
 
 .icon {height: 25px;}
 
-button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: none; letter-spacing: 1px; font-size: 18px; font-family: 'Nitti', sans-serif;}
+button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: none; letter-spacing: 1px; font-size: 18px; font-family: 'Nitti', sans-serif!important;}
 .sqs-block-button-element {padding: 20px; background-color: none!important; border-radius: 50px; text-transform: uppercase; border: none; letter-spacing: 1px!important; font-size: 18px!important; font-family: 'Nitti', sans-serif!important;}
 .light-outline-button {color: var(--off-white); border: 2px solid var(--off-white); background-color: unset;}
 .light-outline-button:hover {color: var(--gray-blue); border: 2px solid var(--gray-blue); background-color: var(--off-white)}
+
+.sqs-system-button {color: var(--off-white); border: 2px solid var(--off-white); background-color: unset;}
+body:not(.button-style-default).button-corner-style-square .sqs-editable-button {border-radius: 300px; background-color: none;}
 
 .dark-outline-button:hover {color: var(--off-white); border: 2px solid var(--off-white); background-color: var(--gray-blue);}
 .dark-outline-button {color: var(--gray-blue); border: 2px solid var(--gray-blue); background-color: unset}
@@ -119,7 +122,7 @@ button {padding: 20px; border-radius: 50px; text-transform: uppercase; border: n
   .page-header {margin-top: 110px!important;}
   h1 {font-size: 36px;}
   .header-image {height: 500px!important;}
-  .content-child {margin: 0;}
+  .content-child {margin: 0; max-width: unset;}
 }
 
 @media screen and (max-width: 1000px) {

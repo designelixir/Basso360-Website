@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.typekit.net/qfe5prt.css">
+    <!-- include system scripts, page meta, and header code injection -->
+    {squarespace-headers}
+  </head>
+  <style>
+    .hamburger-slice {border: 3px solid var(--gray-blue);}
+  </style>
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} ">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+
+    
+    
+      
+      <main class="content-container" role="main" data-content-field="main-content">
+      <div class="flex-start-start">
+        <div class="page-header content-child flex-center-center">
+          
+          <div class="page-title flex-start-start flex-column">
+          {.if collection.mainImage}
+            
+            <img src="{collection.mainImage.assetUrl}" style="width: 100%; max-width: 1330px;"/>
+            <div class="flex-center-center" style="width: 100%;"><h1>{collection.title}</h1></div>
+            {.or}
+            <div class="flex-center-center" style="width: 100%;"><h1 style="padding: 75px;">{collection.title}</h1></div>
+            {.end}
+            
+          </div>
+          
+        </div>
+      </div>
+      <div class="content-child">
+          {squarespace.main-content}
+          </div>
+        </main>
+    
+
+    
+
+      <!-- cms content injection point -->
+      
+
+      <!--Footer with open block field -->
+      {@|apply interested.block}
+      {@|apply footer.block}
+
+    
+
+    <!-- combo and minify scripts when not logged in -->
+    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+
+    <!-- other scripts, and footer code injection -->
+    {squarespace-footers}
+
+  </body>
+</html>
