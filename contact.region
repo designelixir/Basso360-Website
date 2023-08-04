@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.typekit.net/qfe5prt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
@@ -16,24 +17,28 @@
     
     
       
-      <main class="content-container" role="main" data-content-field="main-content">
-      <div class="flex-start-start">
-        <div class="page-header content-child flex-center-center">
-          
-          <div class="page-title flex-start-start flex-column">
-          {.if collection.mainImage}
+      <main class="content-container" role="main" data-content-field="main-content" style="border: 1px solid red;">
+      <div style='height: 100px'></div>
+      <div class="flex-center-center" style="width: 100%;"><h1>{collection.navigationTitle}</h1></div>
+      <div class="flex-center-center">
+        <div class="flex-center-center" style="background-color: var(--navy); color: white; width: 100%; max-width: 1000px; padding: 25px; border-radius: 15px;">
+            <div>
+            <h3>{collection.title}</h3>
+            <p>{collection.description}</p><br>
             
-            <img src="{collection.mainImage.assetUrl}" style="width: 100%; max-width: 1330px;"/>
-            <div class="flex-center-center" style="width: 100%;"><h1>{collection.title}</h1></div>
-            {.or}
-            <div class="flex-center-center" style="width: 100%;"><h1 style="padding: 75px;">{collection.title}</h1></div>
-            {.end}
-            
-          </div>
-          
+                <a class="contact-link" href="tel:{websiteSettings.contactPhoneNumber}">&#9742; {websiteSettings.contactPhoneNumber}</a><br><br>
+                <a class="contact-link" href="https://goo.gl/maps/vMHdhUgZJVpJ1kF3A" target="_blank"> <i class="fa fa-map-pin" aria-hidden="true"></i> {website.location.addressLine1} <br> {website.location.addressLine2}</a><br><br>
+                <a class="contact-link" href="mailto:{websiteSettings.contactEmail}"><i style="font-size:18px" class="fa">&#xf0e0;</i> {websiteSettings.contactEmail}</a>
+
+            </div>
+            <div>
+                <squarespace:block-field id="contactForm" columns="12"/>
+            </div>
         </div>
-      </div>
-      <div class="content-child">
+        </div>
+        
+        
+        <div class="content-child">
           {squarespace.main-content}
           </div>
         </main>
