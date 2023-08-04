@@ -75,7 +75,7 @@
 
 </nav>
 
-<div class="socials-floating-block">
+<div class="socials-floating-block slide-in-right">
     {@|apply socials.block}
     </div>
 
