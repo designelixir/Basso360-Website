@@ -1,23 +1,10 @@
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<footer class=" flex-center-spacebetween flex-wrap basic-margin ">
-        <div class="footer-left flex-start-start basic-padding">
-            
-                <a href="mailto:{websiteSettings.contactEmail}" target="_blank"><i class="material-icons">&#xe0be;</i><span class="mobile-hide"> info@basso360.com</span></a>
-                <a href="tel:{websiteSettings.contactPhoneNumber}"><i class="material-icons">&#xe0b0;</i><span class="mobile-hide">{websiteSettings.contactPhoneNumber}</span></a>
-                <a href="https://www.google.com/maps/place/{website.location.addressLine1}{website.location.addressLine2}" target="_blank"><i class="material-icons">&#xe55e;</i><span class="mobile-hide">{website.location.addressLine1}, {website.location.addressLine2}</span></a>
-            
-        </div>
+<footer class="basic-margin ">
         <div class="flex-center-center footer-center basic-padding">
-            <img src="{website.logoImageUrl}" onclick="window.open('/', '_self')" class="logo hover" alt="Basso360 Logo">
+            <div style="text-align: center;">
+                <img src="../assets/footer.png" onclick="window.open('/', '_self')" class="footer-logo hover" alt="Basso360 Logo"><br><br>
+                <a href="/privacy-policy">Privacy Policy </a>
+                <p>Copyright &copy; 2023 {website.siteTitle} </p>
+                <a href="https://designelixir.studio" target="_blank">Made with &hearts; by Design Elixir </a>
+            </div>
         </div>
-    
-    <div class="footer-right basic-padding">
-        
-            <a href="/privacy-policy">Privacy Policy </a>
-            <p>Copyright &copy; 2023 {website.siteTitle} </p>
-            <a href="https://designelixir.studio" target="_blank">Made with &hearts; by Design Elixir </a>
-        
-    </div>
-
 </footer>

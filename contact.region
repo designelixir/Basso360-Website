@@ -5,61 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.typekit.net/qfe5prt.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
   <style>
     .hamburger-slice {border: 3px solid var(--gray-blue);}
   </style>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} ">
+  
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} flex-start-start">
+    <div class="nav-spacer">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+    </div>  
 
     
     
       
-      <main class="content-container" role="main" data-content-field="main-content" style="border: 1px solid red;">
-      <div style='height: 100px'></div>
-      <div class="flex-center-center" style="width: 100%;"><h1>{collection.navigationTitle}</h1></div>
-      <div class="flex-center-center">
-        <div class="flex-center-center" style="background-color: var(--navy); color: white; width: 100%; max-width: 1000px; padding: 25px; border-radius: 15px;">
-            <div>
-            <h3>{collection.title}</h3>
-            <p>{collection.description}</p><br>
-            
+      <main role="main" data-content-field="main-content" >
+      
+      <h1 class="page-title-solo">{collection.navigationTitle}</h1>
+      
+      
+        <div class="contact-block flex-center-center">
+            <div class="basic-padding">
+                <h3>{collection.title}</h3>
+                <p>{collection.description}</p><br>
                 <a class="contact-link" href="tel:{websiteSettings.contactPhoneNumber}">&#9742; {websiteSettings.contactPhoneNumber}</a><br><br>
                 <a class="contact-link" href="https://goo.gl/maps/vMHdhUgZJVpJ1kF3A" target="_blank"> <i class="fa fa-map-pin" aria-hidden="true"></i> {website.location.addressLine1} <br> {website.location.addressLine2}</a><br><br>
                 <a class="contact-link" href="mailto:{websiteSettings.contactEmail}"><i style="font-size:18px" class="fa">&#xf0e0;</i> {websiteSettings.contactEmail}</a>
                 <squarespace:block-field id="contactSocial" columns="12"/>
             </div>
-            <div>
+            <div class="basic-padding">
                 <squarespace:block-field id="contactForm" columns="12"/>
             </div>
         </div>
-        </div>
+        
         
         
         <div class="content-child">
           {squarespace.main-content}
-          </div>
-        </main>
-    
-
-    
-
-      <!-- cms content injection point -->
-      
-
-      <!--Footer with open block field -->
-      {@|apply interested.block}
-      {@|apply footer.block}
-
-    
-
-    <!-- combo and minify scripts when not logged in -->
+        </div>
+        {@|apply footer.block}
+    </main>
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}
-
   </body>
 </html>
