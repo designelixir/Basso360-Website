@@ -100,13 +100,39 @@ body:not(.button-style-default).button-corner-style-square .sqs-editable-button 
 }
 
 .hero-video-container {width: 100vw; height: 100vh; z-index: -1; top: 0; left: 0;}
-.scrolling-client-list { text-align: center; margin: 100px 0px;}
-.scrolling-client-list:hover {  animation-play-state: paused;}
-.client {min-width: 250px; max-width: 300px; padding: 25px; animation: slideImages 2s linear infinite;}
 
-.client-list-grid { overflow-x: scroll; }
-.client-logo {width: 150px;  /* Safari 6.0 - 9.0 */
+#logoSliderContainer {width: 100%;}
+
+#logoSlider { height: 100%; display: flex; align-items: flex-start; justify-content: flex-start; overflow-x: hidden; -ms-overflow-style: none;  scrollbar-width: none; overflow-y:hidden;  }
+#logoSlider::-webkit-scrollbar { 
+    display: none; 
+}
+.logo-slide {min-width: 200px; width: 200px; height: 200px; padding: 25px; }
+
+.logo-slide:nth-child(1){
+  animation: scrollLeft 40000ms linear infinite; 
+}
+
+@keyframes scrollLeft {
+  0% {
+    margin-left:0px;
+
   }
+  95% {opacity: 0%;}
+  100% {
+    opacity: 0%;
+    margin-left: -100%;
+
+  }
+}
+
+
+
+
+.client {min-width: 250px; max-width: 300px;}
+
+
+.client-logo {width: 150px;}
   
 .client-logo:hover {filter: none; -webkit-filter: none;}
 .client-title {opacity: 0; margin: 0;}
@@ -133,6 +159,7 @@ main { padding: 25px 5vw 25px; margin-top: 80px}
 body {flex-direction: column;}
 .nav-spacer {height: 100px; width: 100%;}
 h2 {font-size: 32px; line-height: 36px;}
+.hero-video-container {height: 80vh;}
 }
 
 @media screen and (max-width: 1000px) {

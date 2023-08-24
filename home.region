@@ -10,29 +10,29 @@
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} flex-start-start">
     
-        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-    
-      <main role="main" data-content-field="main-content" style="padding-top: 100vh">
-      {@|apply hero.block}
-      {@|apply basso.block}
-      <div class="scrolling-client-list">
-				<div class="slider-area">
-					<div class="scrolling-client-list">
-						<h2>Expertise in Multiple Categories</h2>
-						<squarespace:query collection="client-list" limit="15" featured="true">
-							<div class="client-list-grid flex-center-start" id="scrolling-client-list">
-								{.repeated section items}
-								<div class="client hover flex-center-center flex-column">
-									<img src="{assetUrl}" class="client-logo"/>
-									<h6 class="client-title">{title}</h6>
-								</div>
-								{.end}
-							</div>
-						</squarespace:query>
-					</div>
-				</div>
+	<squarespace:navigation navigationId="siteNav" template="site-navigation" />
+	<main role="main" data-content-field="main-content" style="padding-top: 100vh">
+	{@|apply hero.block}
+	{@|apply basso.block}
+	<div style="margin: 100px 0px;">
+		<h2 style="text-align: center;">Expertise in Multiple Categories</h2>
+		<div id='logoSliderContainer'>
+			<div id="logoSlider">
+				<squarespace:query collection="client-list" limit="15" featured="true">
+						{.repeated section items}
+						<div class="logo-slide">
+						<div class="client hover flex-center-center flex-column">
+							<img src="{assetUrl}" class="client-logo"/>
+							<h6 class="client-title">{title}</h6>
+						</div>
+						</div>
+						{.end}
+				</squarespace:query>
 			</div>
-			{@|apply clientList.block}
+		</div>
+	</div>
+
+			
 			<div style="background: white" class="in-the-press">
 				<div class="blue-title-border">
 					<h2 class="title">In The Press</h2>
@@ -83,7 +83,24 @@
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+	<script>
+var childCounter = 0;
+function duplicateAndAppend() {
+  childCounter++;
+  const logoSlider = document.getElementById('logoSlider');
 
+  const firstChild = logoSlider.querySelector('.logo-slide:nth-child('+ childCounter +')');
+
+  if (firstChild) {
+    const copy = firstChild.cloneNode(true);
+    logoSlider.appendChild(copy);
+
+  }
+}
+
+setInterval(duplicateAndAppend, 3000); // Call the function every 3 seconds
+
+	</script>
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}
 
