@@ -2,14 +2,10 @@
 .basso-icon-container {width: 150px;  height: 150px; }
 .basso-block-info { padding-right: 50px; padding-left: 25px;}
 .basso-block img{
-
   height: 150px; 
   width: 150px;
-  animation-name: rotate;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  
+  animation-name: rotate 10s infinite linear;
+
 }
 #bassoBlock {margin-top: 100px;}
 @keyframes rotate{
@@ -20,7 +16,6 @@
     .basso-block-info {padding-right: 0px; margin-top: 0px;}
   .basso-block {flex-direction: column; margin: 0; text-align: center;}
   .basso-icon-container {height: 150px; margin-bottom: 15px;}
-  #bassoBlock {margin-top: 0px;}
   
 }
 </style>
