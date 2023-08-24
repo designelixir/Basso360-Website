@@ -4,7 +4,7 @@
 .basso-block img{
   height: 150px; 
   width: 150px;
-  animation-name: rotate 10s infinite linear;
+  animation: rotate 10s infinite linear;
 
 }
 #bassoBlock {margin-top: 100px;}
