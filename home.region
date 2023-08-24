@@ -97,6 +97,7 @@ function duplicateAndAppend() {
   }
 }
 
+
 setInterval(duplicateAndAppend, 3000); // Call the function every 3 seconds
 
 	</script>

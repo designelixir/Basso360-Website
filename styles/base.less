@@ -102,20 +102,36 @@ body:not(.button-style-default).button-corner-style-square .sqs-editable-button 
 #logoSlider { height: 100%; display: flex; align-items: flex-start; justify-content: flex-start; overflow-x: hidden; -ms-overflow-style: none;  scrollbar-width: none; overflow-y:hidden;  }
 #logoSlider::-webkit-scrollbar {display: none;}
 .logo-slide {min-width: 200px; width: 200px; height: 200px; padding: 25px; }
-.logo-slide:nth-child(1){animation: scrollLeft 40000ms linear infinite;}
+.logo-slide:nth-child(1){animation: scrollLeft 90s linear infinite;}
 .client {min-width: 250px; max-width: 300px;}
 .client-logo {width: 150px;}
 .client-title {opacity: 0; margin: 0;}
 .client-logo:hover + .client-title {opacity: 1;}
 @keyframes scrollLeft {
   0% {margin-left:0px;}
-  100% {margin-left: -100%;}
+  100% {margin-left: -500%;}
 }
 @-webkit-keyframes scrollLeft{
   0%{margin-left: 0px;}
-  100%{margin-left: -100%;}
+  100%{margin-left: -500%;}
+  
 }
 
+@keyframes scrollLeftMobile {
+  0% {margin-left:0px;}
+  100% {margin-left: -900%;}
+}
+@-webkit-keyframes scrollLeftMobile{
+  0%{margin-left: 0px;}
+  100%{margin-left: -900%;}
+  
+}
+
+
+@media screen and (max-width: 1000px){
+  .logo-slide:nth-child(1){animation: scrollLeftMobile 30000ms linear infinite;}
+  
+}
 
 // Our Clients Block
 #ourClients {margin-bottom: 50px; background: white;}
