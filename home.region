@@ -11,18 +11,18 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} flex-start-start">
     
 	<squarespace:navigation navigationId="siteNav" template="site-navigation" />
-	<main role="main" data-content-field="main-content" style="padding-top: 100vh">
+	<main role="main" data-content-field="main-content" id="homepageMain">
 	{@|apply hero.block}
 	{@|apply basso.block}
-	<div style="margin: 100px 0px;">
-		<h2 style="text-align: center;">Expertise in Multiple Categories</h2>
+	<div id="clientSlider">
+		<h2>Expertise in Multiple Categories</h2>
 		<div id='logoSliderContainer'>
 			<div id="logoSlider">
 				<squarespace:query collection="client-list" limit="15" featured="true">
 						{.repeated section items}
-						<div class="logo-slide">
+						<div class="logo-slide" onclick='window.open("/work", "_self")'>
 						<div class="client hover flex-center-center flex-column">
-							<img src="{assetUrl}" class="client-logo"/>
+							<img src="{assetUrl}" class="client-logo" alt="{title} logo"/>
 							<h6 class="client-title">{title}</h6>
 						</div>
 						</div>
@@ -32,48 +32,47 @@
 		</div>
 	</div>
 
-			
-			<div style="background: white" class="in-the-press">
-				<div class="blue-title-border">
-					<h2 class="title">In The Press</h2>
+	<div id="inThePress">
+		<div class="blue-title-border">
+			<h2 class="title">In The Press</h2>
+		</div>
+		<squarespace:query collection="press" limit="2">
+			<div class="flex-start-start in-the-press-grid">
+				{.repeated section items}
+				<div onclick="window.open('{sourceUrl}')" class="press-item hover">
+					<h4>{title}</h4>
+					<script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
+					<img class="hover" src={customContent.pressLogo.assetUrl} style="height: 50px"/>
 				</div>
-				<squarespace:query collection="press" limit="2">
-					<div class="flex-start-start in-the-press-grid">
-						{.repeated section items}
-						<div onclick="window.open('{sourceUrl}')" class="press-item hover">
-							<h4>{title}</h4>
-							<script> var assetLink = 'assets/logos/' + {excerpt} + '.png'; </script>
-							<img class="hover" src={customContent.pressLogo.assetUrl} style="height: 50px"/>
-						</div>
-						{.end}
-					</div>
-				</squarespace:query>
-				<div class="flex-center-flexend" >
-					<a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
-				</div>
+				{.end}
 			</div>
-			{@|apply aboutUs.block}
-			{@|apply whatWeDoBest.block}
+		</squarespace:query>
+		<div class="flex-center-flexend" >
+			<a href='/press' target="_blank" class="continue-to-article">Get The Full Story &rarr;</a>
+		</div>
+	</div>
+	{@|apply aboutUs.block}
+	{@|apply whatWeDoBest.block}
 			
-				<div style="background: white" class="basic-padding" style="margin-bottom: 50px;">
-					<div class="blue-title-border">
-						<h2 class="title">Our Clients</h2>
-					</div>
-					<br>
-					<p><i>View our recent work with these star clients:</i></p>
-					<squarespace:query collection="client-list" limit="15" category="Clients">
-						<div class="flex-center-center flex-wrap">
-							{.repeated section items}
-							<div class="featured-client hover flex-center-center flex-column">
-								<img src="{assetUrl}" class="featured-client-logo hover"/>
-							</div>
-							{.end}
-						</div>
-					</squarespace:query>
-					<div class="flex-center-flexend" >
-						<a href='/work' target="_blank" class="continue-to-article">View All of Our Work &rarr;</a>
-					</div>
+	<div id="ourClients" class="basic-padding">
+		<div class="blue-title-border">
+			<h2 class="title">Our Clients</h2>
+		</div>
+		<br>
+		<p><i>View our recent work with these star businesses:</i></p>
+		<squarespace:query collection="client-list" limit="15" category="Clients">
+			<div class="flex-center-center flex-wrap">
+				{.repeated section items}
+				<div class="featured-client hover flex-center-center flex-column" onclick="window.open('/work','_self')">
+					<img src="{assetUrl}" class="featured-client-logo"/>
 				</div>
+				{.end}
+			</div>
+		</squarespace:query>
+		<div class="flex-center-flexend" >
+			<a href='/work' target="_blank" class="continue-to-article">View All of Our Work &rarr;</a>
+		</div>
+	</div>
 			
       {squarespace.main-content}
         {@|apply interested.block}

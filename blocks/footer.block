@@ -1,3 +1,22 @@
+<style>
+footer {z-index: 300; margin-top: 50px;}
+.footer-right li {list-style-type: none; text-align: right;}
+.interested-block {background: var(--green-blue); text-align: center;  width: 100%; padding: 25px 25px 45px}
+.interested-block h2 {color: white;padding-top: 10px;}
+.footer-logo {width: 200px;}
+.footer-center {text-align: center;}
+.footer-center a {font-size: 14px; color: var(--gray-blue)}
+.footer-center p {font-weight: 500; color: var(--gray-blue)}
+
+@media screen and (max-width: 1000px) {
+  .footer-center .logo {height: 55px;}
+    .footer-center .logo {max-height: 100px;}
+  .footer-center {width: 100%;}
+  .footer-left {width: 100%; text-align: center; display: flex;  justify-content: center!important; align-items: center;}
+  
+}
+</style>
+
 <footer class="basic-margin ">
         <div class="flex-center-center footer-center basic-padding">
             <div style="text-align: center;">

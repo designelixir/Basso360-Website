@@ -1,11 +1,88 @@
+<style>
+.hero-overlay { height: 90vh; position: absolute; top: 0; left: 0;  width: 100vw; background: rgb(244,243,234); pointer-events:none;
+  background: linear-gradient(135deg, rgba(244,243,234,0.8981792546120011) 0%, rgba(244,243,234,0.7385153890657825) 19%, rgba(244,243,234,0) 41%, rgba(244,243,234,0) 100%); 
+}
+.hero-video-container {width: 100vw; height: 90vh; z-index: -1; top: 0; left: 0;}
+.vimeo-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.vimeo-wrapper iframe {
+  width: 100vw;
+   height: 56.25vw; 
+   min-height: 100vh;
+   min-width: 177.77vh; 
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.bounce-arrow-container { height: 150px; }
+.bounce-arrow {height: 30px; -webkit-animation: bounce-top 3s infinite ;
+	        animation: bounce-top 3s infinite ;}
+
+@keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  
+  20% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  60% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+#homepageMain {padding-top: 90vh;}
+@media screen and (max-width: 1000px) {
+.hero-overlay {height: 100%; top: 100px; max-height: 40vh; background: unset;}
+.hero-video-container {height: 100%; max-height: 40vh;  }
+.vimeo-wrapper {position: relative;}
+#homepageMain {padding-top: 45vh;}
+.vimeo-wrapper iframe {min-height: 100%;}
+.bounce-arrow-container {display: none;}
+
+}
+
+</style>
+
 <div class="hero-overlay">
 	<div class="hero-video-container flex-baseline-center">
 		<div class="vimeo-wrapper">
 			<iframe src="https://player.vimeo.com/video/857101318?background=1&autoplay=1&loop=1&byline=0&title=0"  
 				frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
-        <div class="flex-center-center bounce-arrow-container hover" style="margin-top: calc(100vh - 150px)" onclick="window.scrollTo(0, window.innerHeight, 'smooth')">
-            <img class="bounce-top bounce-arrow" src="assets/arrow.png">
-        </div>
+        
 	</div>
 </div>
+<div class="flex-center-center bounce-arrow-container hover" onclick="window.scrollTo(0, window.innerHeight, 'smooth')">
+            <img class="bounce-top bounce-arrow" src="assets/arrow.svg">
+        </div>
