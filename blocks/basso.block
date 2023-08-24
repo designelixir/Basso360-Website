@@ -1,4 +1,5 @@
 <style>
+#bassoBlock {margin-top: 50px;}
 .basso-icon-container {width: 150px;  height: 150px; }
 .basso-block-info { padding-right: 50px; padding-left: 25px;}
 .basso-block img{
@@ -7,15 +8,15 @@
   animation: rotate 10s infinite linear;
 
 }
-#bassoBlock {margin-top: 50px;}
+
 @keyframes rotate{
   from{ transform: rotate(-360deg); }
   to{ transform: rotate(360deg); }
 }
 @media screen and (max-width: 1000px) {
-    .basso-block-info {padding-right: 0px; margin-top: 0px;}
+  .basso-block-info {padding-right: 0px; margin-top: 15px;}
   .basso-block {flex-direction: column; margin: 0; text-align: center;}
-  .basso-icon-container {height: 150px; margin-bottom: 15px;}
+  
   
 }
 </style>
