@@ -21,8 +21,10 @@
 				<squarespace:query collection="client-list" limit="15" featured="true">
 						{.repeated section items}
 						<div class="logo-slide" onclick='window.open("/work", "_self")'>
-						<div class="client hover flex-center-center flex-column">
-							<img src="{assetUrl}" class="client-logo" alt="{title} logo"/>
+						<div class="client hover flex-center-start flex-column">
+							<div class="client-logo-container">
+								<img src="{assetUrl}" class="client-logo" alt="{title} logo"/>
+							</div>
 							<h6 class="client-title">{title}</h6>
 						</div>
 						</div>

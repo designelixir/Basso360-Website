@@ -101,12 +101,13 @@ body:not(.button-style-default).button-corner-style-square .sqs-editable-button 
 #logoSliderContainer {width: 100%;}
 #logoSlider { height: 100%; display: flex; align-items: flex-start; justify-content: flex-start; overflow-x: hidden; -ms-overflow-style: none;  scrollbar-width: none; overflow-y:hidden;  }
 #logoSlider::-webkit-scrollbar {display: none;}
-.logo-slide {min-width: 200px; width: 200px; height: 200px; padding: 25px; }
+.logo-slide {min-width: 200px; width: 200px; padding: 25px; }
 .logo-slide:nth-child(1){animation: scrollLeft 90s linear infinite;}
 .client {min-width: 250px; max-width: 300px;}
+.client-logo-container {width: 150px; height: 200px; border: 1px solid red;}
 .client-logo {width: 150px;}
 .client-title {opacity: 0; margin: 0;}
-.client-logo:hover + .client-title {opacity: 1;}
+.client-logo-container:hover + .client-title {opacity: 1;}
 @keyframes scrollLeft {
   0% {margin-left:0px;}
   100% {margin-left: -500%;}
