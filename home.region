@@ -22,7 +22,7 @@
 						{.repeated section items}
 						<div class="logo-slide" onclick='window.open("/work", "_self")'>
 						<div class="client hover flex-center-start flex-column">
-							<div class="client-logo-container">
+							<div class="client-logo-container flex-center-center">
 								<img src="{assetUrl}" class="client-logo" alt="{title} logo"/>
 							</div>
 							<h6 class="client-title">{title}</h6>
